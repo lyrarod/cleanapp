@@ -14,13 +14,13 @@ export const Testimonials = () => {
           {testimonials.map((testimonial) => (
             <Card
               key={testimonial.name}
-              className="flex flex-col justify-around p-6"
+              className="flex flex-col justify-between p-6 bg-white dark:bg-background"
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
                   <Star
                     key={i}
-                    className="w-5 h-5 text-yellow-400 fill-yellow-400"
+                    className="text-yellow-400 size-5 fill-yellow-400"
                   />
                 ))}
               </div>
@@ -36,7 +36,7 @@ export const Testimonials = () => {
                   className="object-cover rounded-full size-12"
                 />
                 <div>
-                  <strong className="">{testimonial.name}</strong>
+                  <strong className="text-sm">{testimonial.name}</strong>
                   <p className="text-sm text-muted-foreground">
                     {testimonial.role}
                   </p>
