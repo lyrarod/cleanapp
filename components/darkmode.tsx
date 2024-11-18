@@ -16,7 +16,7 @@ export const Darkmode = ({ className }: { className?: string }) => {
   }, []);
 
   React.useEffect(() => {
-    let htmlClass = document.documentElement.classList;
+    const htmlClass = document.documentElement.classList;
     isDark ? htmlClass.add("dark") : htmlClass.remove("dark");
   }, [isDark]);
 
