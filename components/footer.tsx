@@ -7,15 +7,15 @@ export const Footer = () => {
       id="footer"
       className="flex flex-col bg-muted-foreground text-muted"
     >
-      <div className="container flex flex-col py-8 md:justify-between lg:flex-row gap-y-1">
-        <div>
+      <div className="container flex flex-col py-8 md:justify-between lg:flex-row gap-y-8">
+        <div className="flex flex-col gap-y-1">
           <Logo />
           <p className="text-sm">
             Professional Cleaning for Your Peace of Mind.
           </p>
         </div>
 
-        <div className="flex flex-col mt-8 space-y-2 lg:mt-0">
+        <div className="flex flex-col space-y-2 lg:mt-0">
           <strong className="capitalize">Links</strong>
           {[
             { label: "Features", href: "#features" },
@@ -26,7 +26,7 @@ export const Footer = () => {
               <a
                 key={i}
                 href={link.href}
-                className="text-sm capitalize transition hover:underline"
+                className="text-sm capitalize transition hover:underline w-max"
               >
                 {link.label}
               </a>
@@ -34,7 +34,7 @@ export const Footer = () => {
           })}
         </div>
 
-        <div className="flex flex-col mt-8 space-y-2 lg:mt-0">
+        <div className="flex flex-col space-y-2 lg:mt-0">
           <strong className="capitalize">support</strong>
           {["help center", "Privacy Policy", "Terms of Service"].map(
             (link, i) => {
@@ -42,7 +42,7 @@ export const Footer = () => {
                 <a
                   href="#"
                   key={i}
-                  className="text-sm capitalize transition hover:underline"
+                  className="text-sm capitalize transition hover:underline w-max"
                 >
                   {link}
                 </a>
@@ -51,7 +51,7 @@ export const Footer = () => {
           )}
         </div>
 
-        <div className="flex flex-col mt-8 space-y-2 lg:mt-0">
+        <div className="flex flex-col space-y-2 lg:mt-0">
           <strong>Connect With Us</strong>
           <div className="flex gap-x-4">
             <a href="#">
@@ -71,7 +71,7 @@ export const Footer = () => {
       </div>
 
       <div className="border-t">
-        <p className="container py-4 text-xs lg:text-sm">
+        <p className="container py-6 text-xs lg:text-center lg:text-sm">
           Copyright &copy; {new Date().getFullYear()} CleanApp. All rights
           reserved.
         </p>
