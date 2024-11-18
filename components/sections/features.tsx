@@ -1,0 +1,151 @@
+import {
+  ArrowRight,
+  Building2,
+  Globe,
+  Grid2X2,
+  Grip,
+  Handshake,
+  House,
+  RefreshCw,
+} from "lucide-react";
+import { Card } from "../ui/card";
+
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+
+import { ScrollArea } from "@/components/ui/scroll-area";
+
+export const Features = () => {
+  return (
+    <section id="features" className="flex py-20">
+      <div className="container">
+        <div className="flex flex-col">
+          <h1 className="flex text-4xl font-extrabold lg:text-5xl text-primary gap-x-1 drop-shadow">
+            Features <Handshake className="text-muted-foreground" />
+          </h1>
+          <p className="text-sm text-muted-foreground lg:text-base">
+            Lorem ipsum dolor sit amet consectetur.
+          </p>
+        </div>
+
+        <div className="grid gap-8 mt-10 md:grid-cols-2 xl:grid-cols-3 lg:mt-20">
+          {features.map((feature, i) => {
+            return (
+              <Dialog key={i}>
+                <DialogTrigger>
+                  <Card
+                    key={i}
+                    className="flex flex-col justify-between gap-4 p-6 transition cursor-pointer hover:border-primary hover:shadow-md hover:shadow-gray-400 dark:hover:shadow-primary/25"
+                  >
+                    <div className="flex items-center gap-x-2">
+                      <feature.icon className="lg:size-12 size-10 text-primary" />
+                      <div>
+                        <strong className="lg:text-lg text-primary">
+                          {feature.title}
+                        </strong>
+                        <p className="text-sm text-left text-muted-foreground">
+                          {feature.subtitle}
+                        </p>
+                      </div>
+                    </div>
+                    <p className="px-2 text-sm text-left lg:text-base">
+                      {feature.description.short}
+                    </p>
+
+                    <span className="flex items-center self-end text-sm font-medium transition w-max gap-x-1 text-primary">
+                      {`Read`} <ArrowRight className="size-5" />
+                    </span>
+                  </Card>
+                </DialogTrigger>
+
+                <DialogContent>
+                  <DialogHeader>
+                    <DialogTitle>
+                      <div className="flex items-center text-primary gap-x-2">
+                        <feature.icon /> {feature.title}
+                      </div>
+                    </DialogTitle>
+                    <ScrollArea className="max-h-[50vh] h-full text-muted-foreground text-sm text-left p-1">
+                      <DialogDescription>
+                        {feature.description.full}
+                      </DialogDescription>
+                    </ScrollArea>
+                  </DialogHeader>
+                </DialogContent>
+              </Dialog>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+const features = [
+  {
+    icon: House,
+    title: "Residential Cleaning",
+    subtitle: "Residential Cleaning",
+    description: {
+      short:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque blanditiis doloribus ipsum consequatur impedit iste temporibus aut facere distinctio possimus?",
+      full: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam facilis aliquam rerum quis? Quos autem eum fuga suscipit iste laborum architecto amet tempore incidunt! Nesciunt similique facere eum, laudantium inventore, fugit officia quisquam repellendus dolores at quas consequuntur aliquam officiis vel voluptatum qui rem ratione! Nostrum illum dolores consequatur corporis. Accusamus voluptatem fugiat corrupti ea exercitationem deleniti quisquam distinctio ab. Repellendus esse corrupti porro pariatur illum, repellat quidem, commodi nisi, ratione neque tempora impedit officiis velit. Esse, expedita. Doloribus quae modi, deleniti vero saepe delectus iure, sunt, dignissimos aut tenetur velit eveniet repellat! Est nemo reiciendis maxime, laboriosam earum dicta.",
+    },
+  },
+  {
+    icon: Building2,
+    title: "Commercial Cleaning",
+    subtitle: "Commercial Cleaning",
+    description: {
+      short:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque blanditiis doloribus ipsum consequatur impedit iste temporibus aut facere distinctio possimus?",
+      full: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam facilis aliquam rerum quis? Quos autem eum fuga suscipit iste laborum architecto amet tempore incidunt! Nesciunt similique facere eum, laudantium inventore, fugit officia quisquam repellendus dolores at quas consequuntur aliquam officiis vel voluptatum qui rem ratione! Nostrum illum dolores consequatur corporis. Accusamus voluptatem fugiat corrupti ea exercitationem deleniti quisquam distinctio ab. Repellendus esse corrupti porro pariatur illum, repellat quidem, commodi nisi, ratione neque tempora impedit officiis velit. Esse, expedita. Doloribus quae modi, deleniti vero saepe delectus iure, sunt, dignissimos aut tenetur velit eveniet repellat! Est nemo reiciendis maxime, laboriosam earum dicta.",
+    },
+  },
+  {
+    icon: Globe,
+    title: "Deep Cleaning",
+    subtitle: "Deep Cleaning",
+    description: {
+      short:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque blanditiis doloribus ipsum consequatur impedit iste temporibus aut facere distinctio possimus?",
+      full: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam facilis aliquam rerum quis? Quos autem eum fuga suscipit iste laborum architecto amet tempore incidunt! Nesciunt similique facere eum, laudantium inventore, fugit officia quisquam repellendus dolores at quas consequuntur aliquam officiis vel voluptatum qui rem ratione! Nostrum illum dolores consequatur corporis. Accusamus voluptatem fugiat corrupti ea exercitationem deleniti quisquam distinctio ab. Repellendus esse corrupti porro pariatur illum, repellat quidem, commodi nisi, ratione neque tempora impedit officiis velit. Esse, expedita. Doloribus quae modi, deleniti vero saepe delectus iure, sunt, dignissimos aut tenetur velit eveniet repellat! Est nemo reiciendis maxime, laboriosam earum dicta.",
+    },
+  },
+  {
+    icon: RefreshCw,
+    title: "Move In/Out Cleaning",
+    subtitle: "Move In/Out Cleaning",
+    description: {
+      short:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque blanditiis doloribus ipsum consequatur impedit iste temporibus aut facere distinctio possimus?",
+      full: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam facilis aliquam rerum quis? Quos autem eum fuga suscipit iste laborum architecto amet tempore incidunt! Nesciunt similique facere eum, laudantium inventore, fugit officia quisquam repellendus dolores at quas consequuntur aliquam officiis vel voluptatum qui rem ratione! Nostrum illum dolores consequatur corporis. Accusamus voluptatem fugiat corrupti ea exercitationem deleniti quisquam distinctio ab. Repellendus esse corrupti porro pariatur illum, repellat quidem, commodi nisi, ratione neque tempora impedit officiis velit. Esse, expedita. Doloribus quae modi, deleniti vero saepe delectus iure, sunt, dignissimos aut tenetur velit eveniet repellat! Est nemo reiciendis maxime, laboriosam earum dicta.",
+    },
+  },
+  {
+    icon: Grid2X2,
+    title: "Window Cleaning",
+    subtitle: "Window Cleaning",
+    description: {
+      short:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque blanditiis doloribus ipsum consequatur impedit iste temporibus aut facere distinctio possimus?",
+      full: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam facilis aliquam rerum quis? Quos autem eum fuga suscipit iste laborum architecto amet tempore incidunt! Nesciunt similique facere eum, laudantium inventore, fugit officia quisquam repellendus dolores at quas consequuntur aliquam officiis vel voluptatum qui rem ratione! Nostrum illum dolores consequatur corporis. Accusamus voluptatem fugiat corrupti ea exercitationem deleniti quisquam distinctio ab. Repellendus esse corrupti porro pariatur illum, repellat quidem, commodi nisi, ratione neque tempora impedit officiis velit. Esse, expedita. Doloribus quae modi, deleniti vero saepe delectus iure, sunt, dignissimos aut tenetur velit eveniet repellat! Est nemo reiciendis maxime, laboriosam earum dicta.",
+    },
+  },
+  {
+    icon: Grip,
+    title: "Carpet Cleaning",
+    subtitle: "Carpet Cleaning",
+    description: {
+      short:
+        "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque blanditiis doloribus ipsum consequatur impedit iste temporibus aut facere distinctio possimus?",
+      full: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam facilis aliquam rerum quis? Quos autem eum fuga suscipit iste laborum architecto amet tempore incidunt! Nesciunt similique facere eum, laudantium inventore, fugit officia quisquam repellendus dolores at quas consequuntur aliquam officiis vel voluptatum qui rem ratione! Nostrum illum dolores consequatur corporis. Accusamus voluptatem fugiat corrupti ea exercitationem deleniti quisquam distinctio ab. Repellendus esse corrupti porro pariatur illum, repellat quidem, commodi nisi, ratione neque tempora impedit officiis velit. Esse, expedita. Doloribus quae modi, deleniti vero saepe delectus iure, sunt, dignissimos aut tenetur velit eveniet repellat! Est nemo reiciendis maxime, laboriosam earum dicta.",
+    },
+  },
+];
