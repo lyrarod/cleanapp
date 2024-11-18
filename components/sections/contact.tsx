@@ -1,4 +1,3 @@
-import { TwitterLogoIcon } from "@radix-ui/react-icons";
 import {
   Facebook,
   Handshake,
@@ -6,6 +5,7 @@ import {
   Mail,
   MapPin,
   PhoneCall,
+  Twitter,
   Youtube,
 } from "lucide-react";
 
@@ -27,62 +27,33 @@ export const Contact = () => {
         <div className="flex flex-col mt-10 lg:flex-row lg:mt-20">
           <div className="flex flex-col lg:pr-8 basis-1/2 gap-y-8">
             <strong className="flex items-center text-xl lg:text-2xl gap-x-2">
-              <Mail className="lg:size-8" />
               Get in Touch With Us!
             </strong>
             <ul className="flex flex-col text-sm gap-y-4 lg:text-base text-muted-foreground">
-              <li className="flex items-center gap-x-2">
-                <MapPin className="text-primary" /> 123 Street Fighter, Clean
-                City, RJ 12345
-              </li>
-              <li className="flex items-center gap-x-2">
-                <Mail className="text-primary" /> lyrarod@gmail.com
-              </li>
-              <li className="flex items-center gap-x-2">
-                <PhoneCall className="text-primary" /> +55 21 99999-9999
-              </li>
-              <li className="flex items-center gap-x-2">
-                <FaWhatsapp className="text-primary size-6" /> +55 21 88888-8888
-              </li>
+              {contacts.map((contact, i) => {
+                return (
+                  <li key={i} className="flex items-center gap-x-2">
+                    <contact.icon className="text-primary lg:size-6 size-5" />
+                    {contact.title}
+                  </li>
+                );
+              })}
             </ul>
 
             <ul className="grid grid-cols-2 gap-4 lg:gap-8">
-              {[
-                {
-                  icon: Youtube,
-                  title: "YouTube",
-                  description:
-                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-                },
-                {
-                  icon: TwitterLogoIcon,
-                  title: "Twitter",
-                  description:
-                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-                },
-                {
-                  icon: Facebook,
-                  title: "Facebook",
-                  description:
-                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-                },
-                {
-                  icon: Instagram,
-                  title: "Instagram",
-                  description:
-                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
-                },
-              ].map((contact, i) => {
+              {socials.map((social, i) => {
                 return (
                   <li
                     key={i}
-                    className="flex flex-col items-center p-4 text-center border rounded-md shadow gap-y-2 bg-card"
+                    className="flex flex-col items-center p-4 text-center bg-white border rounded-md shadow dark:bg-secondary gap-y-2"
                   >
-                    <contact.icon className="size-8 text-primary" />
+                    <social.icon className="lg:size-8 size-6 text-primary" />
+                    <strong className="text-sm text-muted-foreground">
+                      {social.title}
+                    </strong>
                     <p className="text-sm text-muted-foreground">
-                      {contact.description}
+                      {social.description}
                     </p>
-                    <strong className="text-sm">{contact.title}</strong>
                   </li>
                 );
               })}
@@ -102,3 +73,33 @@ export const Contact = () => {
     </section>
   );
 };
+
+const contacts = [
+  { icon: MapPin, title: "123 Street Fighter, Clean City, RJ 12345" },
+  { icon: Mail, title: "lyrarod@gmail.com" },
+  { icon: PhoneCall, title: "+55 21 99999-9999" },
+  { icon: FaWhatsapp, title: "+55 21 88888-8888" },
+];
+
+const socials = [
+  {
+    icon: Youtube,
+    title: "YouTube",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+  },
+  {
+    icon: Twitter,
+    title: "Twitter",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+  },
+  {
+    icon: Facebook,
+    title: "Facebook",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+  },
+  {
+    icon: Instagram,
+    title: "Instagram",
+    description: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
+  },
+];
