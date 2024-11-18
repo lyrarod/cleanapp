@@ -20,9 +20,11 @@ export const Darkmode = ({ className }: { className?: string }) => {
     isDark ? htmlClass.add("dark") : htmlClass.remove("dark");
   }, [isDark]);
 
+  const toggle = () => setIsDark((prevState) => !prevState);
+
   return (
     <Button
-      onClick={() => setIsDark((prevState) => !prevState)}
+      onClick={toggle}
       variant={"ghost"}
       size={"icon"}
       className={cn(className)}
