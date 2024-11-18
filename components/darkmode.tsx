@@ -11,13 +11,11 @@ export const Darkmode = ({ className }: { className?: string }) => {
   const [isMounted, setIsMounted] = React.useState(false);
   const [isDark, setIsDark] = React.useState(false);
 
-  React.useEffect(() => {
-    setIsMounted(true);
-  }, []);
+  React.useEffect(() => setIsMounted(true), []);
 
   React.useEffect(() => {
     const htmlClass = document.documentElement.classList;
-    isDark ? htmlClass.add("dark") : htmlClass.remove("dark");
+    return isDark ? htmlClass.add("dark") : htmlClass.remove("dark");
   }, [isDark]);
 
   const toggle = () => setIsDark((prevState) => !prevState);
