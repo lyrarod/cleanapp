@@ -49,7 +49,7 @@ export const Features = () => {
                         <strong className="text-sm lg:text-base text-primary">
                           {feature.title}
                         </strong>
-                        <p className="text-sm text-left text-muted-foreground">
+                        <p className="text-xs text-left lg:text-sm text-muted-foreground">
                           {feature.subtitle}
                         </p>
                       </div>
