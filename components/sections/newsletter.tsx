@@ -6,29 +6,24 @@ import { Button } from "../ui/button";
 
 export const Newsletter = () => {
   return (
-    <section id="newsletter" className="flex items-center mb-20">
+    <section id="newsletter" className="flex mb-20">
       <div className="container">
-        <div className="flex flex-col items-center justify-center px-4 py-12 rounded-md shadow-md bg-secondary gap-x-4 gap-y-2 xl:flex-row text-border">
-          <Mails className="xl:size-12 size-8" />
-          <h1 className="flex items-center text-xl font-semibold md:text-2xl lg:text-3xl w-max text-nowrap gap-x-2">
+        <div className="flex flex-col items-center justify-center gap-4 px-4 py-10 shadow rounded-xl xl:flex-row bg-secondary">
+          <Mails className="xl:size-12 size-8 text-muted-foreground" />
+          <h1 className="text-xl font-semibold md:text-2xl lg:text-3xl w-max text-nowrap text-muted-foreground">
             Subscribe to Newsletter
           </h1>
           <form
             className="relative flex w-full max-w-lg"
             onSubmit={(e) => e.preventDefault()}
           >
-            <Input
-              placeholder="Your E-mail"
-              type="email"
-              required
-              className="text-black dark:text-white"
-            />
+            <Input placeholder="Your E-mail" type="email" required />
             <Button
               variant={"outline"}
               size={"default"}
               className="absolute right-0 rounded-l-none"
             >
-              <Mail />
+              <Mail /> Subscribe!
             </Button>
           </form>
         </div>
