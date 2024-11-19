@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "framer-motion";
+
 import {
   ArrowRight,
   Building2,
@@ -25,60 +29,71 @@ export const Features = () => {
   return (
     <section id="features" className="flex py-20">
       <div className="container">
-        <div className="flex flex-col">
+        <motion.div
+          className="flex flex-col w-max"
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          viewport={{ once: false }}
+        >
           <h1 className="flex text-4xl font-extrabold lg:text-5xl text-primary gap-x-1 drop-shadow">
             Features <Handshake className="text-muted-foreground" />
           </h1>
           <p className="text-sm text-muted-foreground lg:text-base">
             Lorem ipsum dolor sit amet consectetur.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid gap-8 mt-10 md:grid-cols-2 xl:grid-cols-3 lg:mt-20">
           {features.map((feature, i) => {
             return (
-              <Dialog key={i}>
-                <DialogTrigger>
-                  <Card
-                    key={i}
-                    className="flex flex-col justify-between gap-4 p-6 transition bg-white cursor-pointer hover:border-primary hover:shadow-lg hover:shadow-gray-400 dark:hover:shadow-primary/25 dark:bg-secondary"
-                  >
-                    <div className="flex items-center gap-x-2">
-                      <feature.icon className="lg:size-12 size-10 text-primary" />
-                      <div className="flex flex-col justify-center">
-                        <strong className="text-sm lg:text-base text-primary">
-                          {feature.title}
-                        </strong>
-                        <p className="text-xs text-left lg:text-sm text-muted-foreground">
-                          {feature.subtitle}
-                        </p>
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.1 + i * 0.1 }}
+                viewport={{ once: false, amount: 0.4 }}
+              >
+                <Dialog>
+                  <DialogTrigger>
+                    <Card className="flex flex-col justify-between gap-4 p-6 transition bg-white cursor-pointer hover:border-primary hover:shadow-lg hover:shadow-gray-400 dark:hover:shadow-primary/25 dark:bg-secondary">
+                      <div className="flex items-center gap-x-2">
+                        <feature.icon className="lg:size-12 size-10 text-primary" />
+                        <div className="flex flex-col justify-center">
+                          <strong className="text-sm lg:text-base text-primary">
+                            {feature.title}
+                          </strong>
+                          <p className="text-xs text-left lg:text-sm text-muted-foreground">
+                            {feature.subtitle}
+                          </p>
+                        </div>
                       </div>
-                    </div>
-                    <p className="px-2 text-sm text-left lg:text-base">
-                      {feature.description.short}
-                    </p>
+                      <p className="px-2 text-sm text-left lg:text-base">
+                        {feature.description.short}
+                      </p>
 
-                    <span className="flex items-center self-end text-sm font-medium transition w-max gap-x-1 text-primary">
-                      {`Read`} <ArrowRight className="size-5" />
-                    </span>
-                  </Card>
-                </DialogTrigger>
+                      <span className="flex items-center self-end text-sm font-medium transition w-max gap-x-1 text-primary">
+                        {`Read`} <ArrowRight className="size-5" />
+                      </span>
+                    </Card>
+                  </DialogTrigger>
 
-                <DialogContent>
-                  <DialogHeader>
-                    <DialogTitle>
-                      <div className="flex items-center text-primary gap-x-2">
-                        <feature.icon /> {feature.title}
-                      </div>
-                    </DialogTitle>
-                    <ScrollArea className="max-h-[50vh] h-full text-muted-foreground text-sm text-left p-1">
-                      <DialogDescription>
-                        {feature.description.full}
-                      </DialogDescription>
-                    </ScrollArea>
-                  </DialogHeader>
-                </DialogContent>
-              </Dialog>
+                  <DialogContent>
+                    <DialogHeader>
+                      <DialogTitle>
+                        <div className="flex items-center text-primary gap-x-2">
+                          <feature.icon /> {feature.title}
+                        </div>
+                      </DialogTitle>
+                      <ScrollArea className="max-h-[50vh] h-full text-muted-foreground text-sm text-left p-1">
+                        <DialogDescription>
+                          {feature.description.full}
+                        </DialogDescription>
+                      </ScrollArea>
+                    </DialogHeader>
+                  </DialogContent>
+                </Dialog>
+              </motion.div>
             );
           })}
         </div>

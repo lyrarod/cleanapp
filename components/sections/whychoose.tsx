@@ -1,18 +1,36 @@
-import { Clock, Shield, Sparkles } from "lucide-react";
+"use client";
+import { motion } from "framer-motion";
+
 import { Card } from "../ui/card";
+import { Clock, Shield, Sparkles } from "lucide-react";
+
+const MotionCard = motion(Card);
 
 export const WhyChoose = () => {
   return (
     <section id="whychooseus" className="flex py-20 bg-secondary">
       <div className="container">
-        <h2 className="text-2xl font-medium lg:text-4xl md:text-3xl">
+        <motion.h2
+          className="text-2xl font-medium lg:text-4xl md:text-3xl w-max"
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          viewport={{ once: false }}
+        >
           Why Choose <span className="text-primary">{`CleanApp`}</span>
-        </h2>
+        </motion.h2>
 
         <div className="grid gap-8 mt-8 lg:grid-cols-3">
           {chooses.map((choose, i) => {
             return (
-              <Card key={i} className="bg-white dark:bg-background">
+              <MotionCard
+                key={i}
+                className="bg-white dark:bg-background"
+                initial={{ opacity: 0, scale: 0.5 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.3, delay: 0.1 + i * 0.1 }}
+                viewport={{ once: false, amount: 0.4 }}
+              >
                 <div className="flex flex-col gap-4 p-6">
                   <choose.icon className="lg:size-8 text-primary" />
                   <strong className="text-sm lg:text-base">
@@ -22,7 +40,7 @@ export const WhyChoose = () => {
                     {choose.description}
                   </p>
                 </div>
-              </Card>
+              </MotionCard>
             );
           })}
         </div>

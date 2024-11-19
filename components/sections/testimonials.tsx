@@ -1,20 +1,36 @@
-import { Card } from "@/components/ui/card";
-import { Star } from "lucide-react";
+"use client";
+
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+import { Star } from "lucide-react";
+import { Card } from "@/components/ui/card";
+
+const MotionCard = motion(Card);
 
 export const Testimonials = () => {
   return (
     <section id="testimonials" className="py-20 bg-secondary">
       <div className="container">
-        <h2 className="mb-8 text-2xl font-medium lg:text-4xl md:text-3xl">
+        <motion.h2
+          className="mb-8 text-2xl font-medium lg:text-4xl md:text-3xl w-max"
+          initial={{ opacity: 0, scale: 0.5 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          viewport={{ once: false }}
+        >
           What Our Clients Say
-        </h2>
+        </motion.h2>
 
         <div className="grid gap-8 lg:grid-cols-3">
-          {testimonials.map((testimonial) => (
-            <Card
-              key={testimonial.name}
+          {testimonials.map((testimonial, i) => (
+            <MotionCard
+              key={i}
               className="flex flex-col justify-between p-6 bg-white dark:bg-background"
+              initial={{ opacity: 0, scale: 0.5 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.3, delay: 0.1 + i * 0.1 }}
+              viewport={{ once: false, amount: 0.4 }}
             >
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => (
@@ -42,7 +58,7 @@ export const Testimonials = () => {
                   </p>
                 </div>
               </div>
-            </Card>
+            </MotionCard>
           ))}
         </div>
       </div>

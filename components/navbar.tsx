@@ -12,7 +12,7 @@ export const Navbar = () => {
   const [menuIsOpen, setMenuIsOpen] = React.useState(false);
 
   return (
-    <header className="sticky top-0 left-0 z-50 w-full shadow bg-background/70 backdrop-blur-md dark:border-b">
+    <header className="fixed top-0 left-0 z-50 w-full shadow bg-background/70 backdrop-blur-md dark:border-b">
       <nav className="container flex items-center justify-between py-6">
         <Logo className="text-primary" />
         <ul className="items-center hidden lg:flex gap-x-8">
@@ -21,7 +21,7 @@ export const Navbar = () => {
               <li key={i}>
                 <a
                   href={`${link.href}`}
-                  className="text-sm font-semibold tracking-wide uppercase transition hover:text-primary"
+                  className="font-medium tracking-wider capitalize transition hover:text-primary"
                 >
                   {link.label}
                 </a>
