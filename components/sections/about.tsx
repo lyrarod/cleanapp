@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 
 import { CheckCircle, Handshake } from "lucide-react";
+import { Separator } from "../ui/separator";
 
 export const About = () => {
   return (
@@ -24,22 +25,28 @@ export const About = () => {
         </motion.div>
 
         <div className="flex flex-col mt-10 lg:mt-20 lg:flex-row">
-          <motion.div
-            className="flex flex-col lg:pr-8 basis-1/2 lg:gap-y-8 gap-y-4"
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: false, amount: 0.4 }}
-          >
-            <strong className="text-xl md:text-2xl lg:text-3xl">
-              Who We Are?
-            </strong>
-            <p className="text-sm lg:text-base text-muted-foreground">
+          <div className="flex flex-col lg:pr-8 basis-1/2 lg:gap-y-8 gap-y-4">
+            <motion.strong
+              className="text-xl md:text-2xl lg:text-3xl"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              viewport={{ once: false, amount: 0.4 }}
+            >
+              Who We <span className="text-primary">Are</span>?
+            </motion.strong>
+            <motion.p
+              className="text-sm lg:text-base text-muted-foreground"
+              initial={{ opacity: 0, x: -40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+              viewport={{ once: false, amount: 0.4 }}
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus nemo tempore non nostrum iure, repellendus debitis
               delectus perferendis. Libero suscipit sunt culpa recusandae quae
               perspiciatis, commodi illo velit earum ipsum.
-            </p>
+            </motion.p>
 
             <ul className="flex flex-col gap-y-2">
               {[
@@ -49,23 +56,27 @@ export const About = () => {
                 "Eco-friendly cleaning solutions",
               ].map((item, i) => {
                 return (
-                  <li
+                  <motion.li
                     key={i}
                     className="flex items-center text-sm lg:text-base gap-x-2"
+                    initial={{ opacity: 0, x: -40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.3 + i * 0.1 }}
+                    viewport={{ once: false, amount: 0.4 }}
                   >
                     <CheckCircle className="text-primary size-5 lg:size-6" />{" "}
                     {item}
-                  </li>
+                  </motion.li>
                 );
               })}
             </ul>
-          </motion.div>
+          </div>
 
           <motion.div
             className="relative flex mt-10 lg:mt-0 basis-1/2"
             initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: false, amount: 0.4 }}
           >
             <img
@@ -77,25 +88,32 @@ export const About = () => {
           </motion.div>
         </div>
 
-        <div className="w-full h-[1px] lg:my-24 my-16 bg-border"></div>
+        <Separator className="lg:my-20 my-16" />
 
         <div className="flex flex-col lg:flex-row-reverse">
-          <motion.div
-            className="flex flex-col lg:pl-8 basis-1/2 lg:gap-y-8 gap-y-4"
-            initial={{ opacity: 0, x: 40 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
-            viewport={{ once: false, amount: 0.4 }}
-          >
-            <strong className="text-xl md:text-2xl lg:text-3xl">
-              Who We Are?
-            </strong>
-            <p className="text-sm lg:text-base text-muted-foreground">
+          <div className="flex flex-col lg:pl-8 basis-1/2 lg:gap-y-8 gap-y-4">
+            <motion.strong
+              className="text-xl md:text-2xl lg:text-3xl"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+              viewport={{ once: false, amount: 0.4 }}
+            >
+              What do we <span className="text-primary">Clean</span>?
+            </motion.strong>
+
+            <motion.p
+              className="text-sm lg:text-base text-muted-foreground"
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0.1 }}
+              viewport={{ once: false, amount: 0.4 }}
+            >
               Lorem ipsum dolor sit amet consectetur adipisicing elit.
               Temporibus nemo tempore non nostrum iure, repellendus debitis
               delectus perferendis. Libero suscipit sunt culpa recusandae quae
               perspiciatis, commodi illo velit earum ipsum.
-            </p>
+            </motion.p>
 
             <ul className="flex flex-col gap-y-2">
               {[
@@ -105,23 +123,27 @@ export const About = () => {
                 "Eco-friendly cleaning solutions",
               ].map((item, i) => {
                 return (
-                  <li
+                  <motion.li
                     key={i}
                     className="flex items-center text-sm lg:text-base gap-x-2"
+                    initial={{ opacity: 0, x: 40 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.3, delay: 0.2 + i * 0.1 }}
+                    viewport={{ once: false, amount: 0.4 }}
                   >
                     <CheckCircle className="text-primary size-5 lg:size-6" />{" "}
                     {item}
-                  </li>
+                  </motion.li>
                 );
               })}
             </ul>
-          </motion.div>
+          </div>
 
           <motion.div
             className="relative flex mt-10 lg:mt-0 basis-1/2"
             initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 1 }}
+            transition={{ duration: 1, delay: 0.5 }}
             viewport={{ once: false, amount: 0.4 }}
           >
             <img
