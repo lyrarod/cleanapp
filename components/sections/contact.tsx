@@ -43,7 +43,7 @@ export const Contact = () => {
               transition={{ duration: 0.3, delay: 0.1 }}
               viewport={{ once: false }}
             >
-              Get in Touch With Us!
+              Get in Touch <span className="text-primary">With Us</span>!
             </motion.strong>
             <ul className="flex flex-col text-sm gap-y-4 lg:text-base text-muted-foreground">
               {contacts.map((contact, i) => {
