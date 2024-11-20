@@ -71,7 +71,7 @@ export const Footer = () => {
       </div>
 
       <div className="border-t">
-        <p className="container py-6 text-xs lg:text-center lg:text-sm">
+        <p className="container py-6 text-xs lg:text-sm">
           Copyright &copy; {new Date().getFullYear()} CleanApp. All rights
           reserved.
         </p>
