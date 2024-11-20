@@ -1,6 +1,6 @@
 "use client";
 
-import { delay, motion } from "framer-motion";
+import { motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { ArrowRightCircle, Bookmark, Check } from "lucide-react";
 
