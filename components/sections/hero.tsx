@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { ArrowRightCircle, Bookmark, Check } from "lucide-react";
 
@@ -28,7 +28,7 @@ export const Hero = () => {
         />
       </div>
 
-      <div className="container z-10 flex flex-col items-center justify-center gap-y-8 lg:gap-y-10">
+      <div className="container z-10 flex flex-col items-center justify-center gap-y-6 lg:gap-y-10">
         <motion.h1
           className="text-4xl font-extrabold text-center md:text-5xl lg:text-7xl text-wrap drop-shadow"
           initial={{ opacity: 0, y: 40 }}
@@ -36,12 +36,21 @@ export const Hero = () => {
           transition={{ duration: 1 }}
           viewport={{ once: false }}
         >
-          Professional <span className="text-primary">Cleaning</span> for Your
-          Peace of Mind
+          Professional <span className="text-primary">Cleaning</span>
         </motion.h1>
 
+        <motion.h2
+          className="text-2xl font-extrabold text-center md:text-3xl lg:text-5xl text-wrap drop-shadow"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.1, duration: 1 }}
+          viewport={{ once: false }}
+        >
+          For Your <span className="text-primary">Peace</span> of Mind !
+        </motion.h2>
+
         <motion.strong
-          className="text-sm text-center lg:text-lg text-muted-foreground text-wrap"
+          className="text-sm text-center lg:text-base text-muted-foreground text-wrap"
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
