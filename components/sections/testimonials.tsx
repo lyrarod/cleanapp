@@ -19,7 +19,7 @@ export const Testimonials = () => {
           transition={{ duration: 0.3 }}
           viewport={{ once: false }}
         >
-          What Our Clients Say
+          What Our <span className="text-primary">Clients Say</span>
         </motion.h2>
 
         <div className="grid gap-8 lg:grid-cols-3">
