@@ -56,7 +56,7 @@ export const Features = () => {
               >
                 <Dialog>
                   <DialogTrigger>
-                    <Card className="flex flex-col justify-between gap-4 p-6 transition bg-white cursor-pointer hover:border-primary hover:shadow-lg hover:shadow-gray-300 dark:hover:shadow-primary/25 dark:bg-secondary">
+                    <Card className="flex flex-col justify-between gap-4 p-6 transition bg-white cursor-pointer hover:border-primary hover:shadow-lg dark:hover:shadow-primary/25 dark:bg-secondary">
                       <div className="flex items-center gap-x-2">
                         <feature.icon className="lg:size-12 size-10 text-primary" />
                         <div className="flex flex-col justify-center">
